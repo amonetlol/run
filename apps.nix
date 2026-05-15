@@ -1,8 +1,21 @@
 { config, pkgs, ... }:
 
 {
+
+  # Habilitar Hyprland e SDDM
+  programs.hyprland.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+
+  # Correções para renderização em VM
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+  };
+
   # 1. Utilizar o último Kernel disponível
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # 2. Ativar o Foot como terminal padrão do sistema
   programs.foot = {
@@ -27,12 +40,12 @@
   # Serviços necessários para o Thunar (Lixeira, montagem de discos e extração)
   services.gvfs.enable = true; # Essencial para lixeira e redes no Thunar
   services.tumbler.enable = true; # Miniaturas de imagens
-  programs.file-roller.enable = true; # Backend para o thunar-archive-plugin (substitui bem o xarchiver)
+  #programs.file-roller.enable = true; # Backend para o thunar-archive-plugin (substitui bem o xarchiver)
 
   # 4. Programas com módulos dedicados (melhor integração de shell)
   programs.starship.enable = true;
   programs.zoxide.enable = true;
-  programs.fzf.enable = true;
+  #programs.fzf.enable = true;
   programs.git.enable = true;
   programs.firefox.enable = true;
 
@@ -58,7 +71,7 @@
     # Desenvolvimento & Compiladores
     gcc
     luarocks
-    lua51
+    lua51Packages.lua
     tree-sitter
     jq
     nodePackages.npm
@@ -72,6 +85,10 @@
     findutils
     coreutils
     bash-completion
+
+   # Hyprland
+    rofi-wayland # Launcher de aplicativos
+    waybar
   ];
 
   # Não se esqueça de manter suas configurações anteriores do VMware e Hyprland aqui!
