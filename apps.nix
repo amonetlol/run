@@ -67,6 +67,7 @@ fonts.packages = with pkgs; [
     wget
     curl
     bc
+    starship
     
     # Editores e Visualizadores
     neovim
