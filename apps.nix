@@ -14,18 +14,22 @@
     WLR_NO_HARDWARE_CURSORS = "1";
   };
 
+# Configuração de Fontes do Sistema
+fonts.packages = with pkgs; [
+  nerd-fonts.jetbrains-mono
+];
+
   # 1. Utilizar o último Kernel disponível
   #boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # 2. Ativar o Foot como terminal padrão do sistema
   programs.foot = {
     enable = true;
-    # Você pode adicionar configurações do foot diretamente aqui se quiser:
-    # settings = {
-    #   main = {
-    #     font = "monospace:size=11";
-    #   };
-    # };
+    settings = {
+      main = {
+        font = "JetBrainsMono Nerd Font:size=11";
+      };
+    };
   };
 
   # 3. Ativar o Thunar com os plugins solicitados
@@ -87,7 +91,7 @@
     bash-completion
 
    # Hyprland
-    rofi-wayland # Launcher de aplicativos
+    rofi
     waybar
   ];
 
