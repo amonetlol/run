@@ -93,6 +93,7 @@ fonts.packages = with pkgs; [
    # Hyprland
     rofi
     waybar
+    wl-clipboard
   ];
 
   # Não se esqueça de manter suas configurações anteriores do VMware e Hyprland aqui!
