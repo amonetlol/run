@@ -1,5 +1,8 @@
 # run
 
+### Neovim ###
+https://github.com/NvChad/tinyvim
+
 ### Share ###
 # git-qtile | fonts | astronvim | starship | ufetch | astronvim (root)
 bash <(curl -fsSL https://github.com/amonetlol/scripts/raw/refs/heads/main/share.sh)
