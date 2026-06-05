@@ -35,6 +35,7 @@ map("i", "<C-q>", "<Esc><cmd>wqa<CR>a", { desc = "Salvar e sair de tudo" })
 map("n", "<leader>qq", "<cmd>wqa<CR>", { desc = "Salvar e sair de tudo" })
 map("n", "<leader>qQ", "<cmd>qa!<CR>", { desc = "Sair sem salvar" })
 map("n", "<A-c>", "<cmd> %y+ <CR>", { desc = "Copiar conteúdo todo" })
+map('n', '<C-d>', ':%d<CR>', { noremap = true, silent = true, desc = "Deleta todo conteudo" })
 
 -- Cheatsheet
 map("n", "<F1>", "<cmd>edit ~/.config/nvim/lua/mappings.lua<CR>", {
